@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from routers import medicamentos
+from routers import medicamentos, inventario
+
 
 app = FastAPI(
     title="Mi Botiquín API",
@@ -9,6 +10,7 @@ app = FastAPI(
 
 
 app.include_router(medicamentos.router)
+app.include_router(inventario.router)
 
 
 @app.get("/")
