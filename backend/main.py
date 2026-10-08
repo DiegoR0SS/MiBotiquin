@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import medicamentos, inventario
+from routers import medicamentos, inventario, tratamientos, tomas
 
 
 app = FastAPI(
@@ -11,7 +11,8 @@ app = FastAPI(
 
 app.include_router(medicamentos.router)
 app.include_router(inventario.router)
-
+app.include_router(tratamientos.router)
+app.include_router(tomas.router)
 
 @app.get("/")
 def inicio():
